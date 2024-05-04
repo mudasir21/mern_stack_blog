@@ -1,8 +1,13 @@
 import express from 'express'      // changes type to module in json so would work now
 // const express = require('express')
 
+
+const app = express();
+
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+
+import userRouter from './routes/user.route.js'
 
 // const mongoURL = ''
 
@@ -14,8 +19,15 @@ mongoose.connect(process.env.MONGOURL)
 }).catch(error => {
     console.log(error)
 })
-const app = express();
+
+
+
+app.use('/api/user',userRouter);
 
 app.listen(3000, () => {
     console.log("listening to port 3000...");
 })
+
+
+
+
