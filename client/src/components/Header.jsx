@@ -36,7 +36,7 @@ export default function Header() {
                 </Button>
 
                 <Link to='/sign-in'>
-                    <Button gradientDuoTone="purpleToBlue">
+                    <Button gradientDuoTone="purpleToBlue" outline>
                         signin
                     </Button>
 
@@ -46,7 +46,7 @@ export default function Header() {
             </div>
 
             <Navbar.Collapse>
-                <Navbar.Link active = {path === '/'} as={'div'}>      {/*made div coz both navbar.link and Link create an anchor tag and two anchor tags for one componenet is not allowed hence we made this as div*/}
+                <Navbar.Link active = {path === '/'} as={'div'} >      {/*made div coz both navbar.link and Link create an anchor tag and two anchor tags for one componenet is not allowed hence we made this as div*/}
                     <Link to='/' > Home </Link>
                 </Navbar.Link>
 
