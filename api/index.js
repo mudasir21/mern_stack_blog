@@ -3,13 +3,14 @@ import express from 'express'      // changes type to module in json so would wo
 
 
 const app = express();
+app.use(express.json());            // this will allow json to be sent through post req
 
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-import userRouter from './routes/user.route.js'
+import userRoutes from './routes/user.route.js'
+import authRoutes from './routes/auth.route.js'
 
-// const mongoURL = ''
 
 dotenv.config();
 
@@ -22,7 +23,8 @@ mongoose.connect(process.env.MONGOURL)
 
 
 
-app.use('/api/user',userRouter);
+app.use('/api/user',userRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(3000, () => {
     console.log("listening to port 3000...");

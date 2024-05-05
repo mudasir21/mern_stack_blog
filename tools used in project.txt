@@ -2,3 +2,5 @@
 - Tailwindcss
 - flowbit react    (UI library)
 - Nodejs
+- insomnia api testing
+- MongoDB
